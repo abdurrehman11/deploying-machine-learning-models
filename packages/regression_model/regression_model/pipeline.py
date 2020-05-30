@@ -2,7 +2,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.linear_model import Lasso
 
-import preprocessors as pp
+from regression_model import preprocessors as pp
 
 
 CATEGORICAL_VARS_WITH_NA = [
