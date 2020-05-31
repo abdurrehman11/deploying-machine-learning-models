@@ -3,12 +3,12 @@ import pandas as pd
 
 from regression_model.processing.data_management import load_pipeline
 from regression_model.config import config
-from regression_model.config import logging_config
+from regression_model.config.logging_config import get_logger
 from regression_model.processing.validation import validate_inputs
 from regression_model import __version__ as _version
 
 
-_logger = logging_config.get_logger(__name__)
+_logger = get_logger(logger_name=__name__)
 
 
 pipeline_file_name = f'{config.PIPELINE_SAVE_FILE}{_version}.pkl'
