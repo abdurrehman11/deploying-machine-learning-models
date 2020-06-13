@@ -18,7 +18,6 @@ jobs:
             ./scripts/fetch_kaggle_dataset.sh
             unzip packages/regression_model/regression_model/datasets/house-prices-advanced-regression-techniques.zip -d packages/regression_model/regression_model/datasets/
             py.test -vv packages/regression_model/tests
-
   test_ml_api:
     working_directory: ~/project
     docker:
@@ -33,20 +32,19 @@ jobs:
             pip install --upgrade pip
             pip install -r packages/ml_api/requirements.txt
             py.test -vv packages/ml_api/tests
-
   train_and_upload_regression_model:
     working_directory: ~/project
     docker:
       - image: circleci/python:3.7.2
     steps:
       - checkout
-      - run:
+      - run: 
           name: Setup env
           command: |
             virtualenv venv
             . venv/bin/activate
             pip install -r packages/regression_model/requirements.txt
-      - run:
+      - run: 
           name: Publish model
           command: |
             . venv/bin/activate
@@ -64,5 +62,5 @@ workflows:
       - test_ml_api
       - train_and_upload_regression_model
       - test_ml_api:
-        requires:
-          - train_and_upload_regression_model
+          requires:
+            - train_and_upload_regression_model
