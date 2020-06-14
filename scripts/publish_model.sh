@@ -4,6 +4,7 @@
 
 GEMFURY_URL=$PIP_EXTRA_INDEX_URL
 
+# Exit immediately if a command exits with a non-zero status(failure).
 set -e
 
 DIRS="$@"
