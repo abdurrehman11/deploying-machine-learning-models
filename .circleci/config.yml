@@ -2,8 +2,8 @@ version: 2
 
 defaults: &defaults
   working_directory: ~/project
-    docker:
-      - image: circleci/python:3.8.1
+  docker:
+    - image: circleci/python:3.8.1
 
 prepare_venv: &prepare_venv
   run:
