@@ -51,8 +51,8 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-        keys:
-          - py-deps-{{ checksum "packages/ml_api/requirements.txt" }}
+          keys:
+            - py-deps-{{ checksum "packages/ml_api/requirements.txt" }}
       - run:
           name: Runnning tests
           command: |
