@@ -10,7 +10,7 @@ from regression_model import __version__ as _version
 import typing as t
 
 
-_logger = logging_config.getLogger(__name__)
+_logger = logging_config.get_logger(__name__)
 
 pipeline_file_name = f"{config.PIPELINE_SAVE_FILE}{_version}.pkl"
 _price_pipe = load_pipeline(file_name=pipeline_file_name)
