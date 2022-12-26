@@ -5,7 +5,7 @@ pandas==1.0.3
 
 # packaging
 setuptools==41.2.0
-wheel==0.32.3
+wheel==0.38.1
 
 # testing requirements
 pytest==5.2.0
